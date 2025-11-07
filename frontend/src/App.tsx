@@ -7,6 +7,14 @@ import ResumeBuilder from './components/ResumeBuilder';
 import AnalysisResults from './components/AnalysisResults';
 import VersionHistory from './components/VersionHistory';
 
+// API URL configuration
+const API_URL = process.env.NODE_ENV === 'production' 
+  ? '/api' 
+  : 'http://localhost:8000/api';
+
+// Make API_URL available globally
+(window as any).API_URL = API_URL;
+
 function App() {
   const [darkMode, setDarkMode] = useState(false);
   const [activeTab, setActiveTab] = useState('upload');
